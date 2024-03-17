@@ -1,5 +1,7 @@
 # Mifare Classic UID Scanner
 
+[English version - click here](https://github.com/Ecl1pseR/Mifare-Classic-UID-scanner/blob/main/README-EN.md)
+
 Цей Python скрипт дозволяє сканувати та записувати унікальні ідентифікатори (UID) з NFC карт за допомогою NFC рідерів. Він безперервно сканує NFC картки та записує їх UID у файл, забезпечуючи, що кожен UID буде записаний тільки один раз (щоб уникнути повторень).
 
 ## Особливості
