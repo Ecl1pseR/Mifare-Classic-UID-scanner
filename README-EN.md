@@ -26,3 +26,4 @@ This Python script allows scanning and recording unique identifiers (UIDs) from 
 
 - This script requires a compatible NFC reader and corresponding drivers installed on your system.
 - Ensure that your system has the necessary permissions to access the NFC reader device.
+- In my case, the NFC reader ACR122U was used
