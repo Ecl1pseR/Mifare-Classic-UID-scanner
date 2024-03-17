@@ -49,12 +49,12 @@ def main():
                         if uid:  # If UID is obtained
                             if not card_present:  # If the card is detected for the first time
                                 if check_uid_in_file(uid, uid_file_path):  # Check if this UID is already recorded in the file
-                                    print("\033[2J\033[H")  # Clear the screen
+                                    os.system('cls' if os.name == 'nt' else 'clear')  # Clear the screen
                                     print("Number of scanned UID's:", uid_count)  # Print current number of scanned UID's
                                     print("This UID is already recorded")  # Notify that UID has already been recorded earlier                                
                                 else:
                                     uid_count += 1  # Increment UID counter
-                                    print("\033[2J\033[H")  # Clear the screen
+                                    os.system('cls' if os.name == 'nt' else 'clear')  # Clear the screen
                                     print("Number of scanned UID's:", uid_count)  # Print current number of scanned UID's
                                     with open(uid_file_path, 'a') as file:  # Open file for appending
                                         file.write(uid + '\n')  # Write UID to the file
@@ -66,13 +66,13 @@ def main():
                             card_present = False  # Set flag indicating card is absent
                     except CardConnectionException as e:  # Handle exception when connection error with card occurs
                         print("Card connection error:", e)  # Print message about connection error
-                        print("\033[2J\033[H")  # Clear the screen
+                        os.system('cls' if os.name == 'nt' else 'clear')  # Clear the screen
                         print("Number of scanned UID's:", uid_count)  # Print current number of scanned UID's
                         print("UID:", uid)  # Print obtained UID
                         print("Place another card to get UID...")  # Prompt to place another card for scanning
                         card_present = False  # Set flag indicating card is absent
     except KeyboardInterrupt:  # Handle exception when user presses Ctrl+C
-        print("\033[2J\033[H")  # Clear the screen
+        os.system('cls' if os.name == 'nt' else 'clear')  # Clear the screen
         print("Number of scanned UID's:", uid_count)  # Print number of scanned UID's
         print("The program is finished. Goodbye")  # Print message about program termination
         time.sleep(2)  # Delay before exiting the program
